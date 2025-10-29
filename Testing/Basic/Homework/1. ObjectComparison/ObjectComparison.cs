@@ -15,7 +15,7 @@ public class ObjectComparison
         var expectedTsar = new Person("Ivan IV The Terrible", 54, 170, 70,
             new Person("Vasili III of Russia", 28, 170, 60, null));
         
-        actualTsar.Should().BeEquivalentTo(expectedTsar, options => options.ExcludingMembersNamed("Id").AllowingInfiniteRecursion());
+        actualTsar.Should().BeEquivalentTo(expectedTsar, options => options.ExcludingMembersNamed(nameof(Person.Id)).AllowingInfiniteRecursion());
         
         // Комментарий от студента: 
         // Можно было написать вот так (ниже код), но тут есть проблемы.
